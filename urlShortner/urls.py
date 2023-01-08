@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from url.views import redirect_view
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('<str:short_url>', redirect_view),
 ]
